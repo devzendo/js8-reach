@@ -1,5 +1,6 @@
 /log
 /target
+/service/target
 .DS_Store
 .vscode
 .idea
