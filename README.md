@@ -8,5 +8,7 @@ How far can you reach? Can you reach your distant friend? Are there paths betwee
 
 This experiment takes a feed of JS8Call data from PSKReporter's MQTT feed, and given your callsign (and any stations you want to establish a relayed call with), displays the graph of reachability on a map.
 
+Available as either a locally-runnable application, for a single station, or as a cloud service that can be used by many stations (each of which require a login).
+
 
 
