@@ -8,7 +8,7 @@ edition = "2021"
 [dependencies]
 common = {path = "../common"}
 # The frontend framework we are going to use
-yew = "0.20.0"
+yew = { version = "0.20", features = ["csr"] }
 # Yew's routing framework for handling url on the frontend
 yew-router = "0.17.0"
 # Logging for Debugging
