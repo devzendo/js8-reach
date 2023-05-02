@@ -1,0 +1,8 @@
+[workspace]
+
+members = [
+  "ui",
+  "service",
+  "common",
+]
+
