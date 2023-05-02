@@ -14,7 +14,7 @@ async fn get_index() -> Result<NamedFile, NotFound<String>> {
         .map_err(|e| NotFound(e.to_string()))
 }
 
-//Create a route for any url that is a path from the /
+//  Create a route for any url that is a path from the /
 #[get("/<path..>")]
 async fn static_files(path: PathBuf) -> Result<NamedFile, NotFound<String>> {
     let path = PathBuf::from("../ui/dist").join(path);
@@ -23,6 +23,16 @@ async fn static_files(path: PathBuf) -> Result<NamedFile, NotFound<String>> {
         Err(_) => get_index().await,
     }
 }
+
+#[get("/data/<path..>")]
+async fn data(path: PathBuf) -> Result<NamedFile, NotFound<String>> {
+    let path = PathBuf::from("./data/").join(path);
+    match NamedFile::open(path).await {
+        Ok(f) => Ok(f),
+        Err(_) => get_index().await,
+    }
+}
+
 
 // Return the index when the url is /
 #[get("/")]
@@ -40,6 +50,6 @@ fn rocket() -> _ {
 
     // You must mount the static_files route
     rocket::build()
-        .mount("/", routes![index, static_files])
+        .mount("/", routes![index, static_files, data])
 }
 
