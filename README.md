@@ -12,3 +12,9 @@ Available as either a locally-runnable application, for a single station, or as 
 
 
 
+Acknowledgements
+
+Rocket server, Yew front end framework.
+
+App set up using guide at https://theadventuresofaliceandbob.com/posts/rust_rocket_yew_part1.md
+
